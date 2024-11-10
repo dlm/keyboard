@@ -1,5 +1,5 @@
-gui_shift: gui_shift {
-label = "GUI_SHIFT";
+macro_gui_shift: macro_gui_shift {
+label = "macro_gui_shift";
 compatible = "zmk,behavior-macro";
 #binding-cells = <0>;
 bindings
