@@ -68,6 +68,8 @@ The built docker container and compiled firmware files can be deleted with `make
 
 Creating the docker container takes some time. Therefore `make clean_firmware` can be used to only clean firmware without removing the docker container. Similarly `make clean_image` can be used to remove the docker container without removing compiled firmware files.
 
+You can also use the command `make refresh`, which will clean up the `firemware` directory and build a new version of the firmward
+
 ## Flashing firmware
 
 Follow the programming instruction on page 8 of the [Quick Start Guide](https://kinesis-ergo.com/wp-content/uploads/Advantage360-Professional-QSG-v8-25-22.pdf) to flash the firmware.
