@@ -35,6 +35,8 @@ left:
 		zmk
 	git checkout config/version.dtsi
 
+refresh: clean_firmware all
+
 clean_firmware:
 	rm -f firmware/*.uf2
 
