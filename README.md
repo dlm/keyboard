@@ -8,6 +8,35 @@ There is a web based GUI available for editing the keymap. It is available at ht
 
 Certain ZMK features (e.g. combos) require knowing the exact key positions in the matrix. They can be found in both image and text format [here](assets/key-positions.md)
 
+## Keyboard position numbers
+
+Starting from the top left key (=+) and going to the right
+and then down.  They positions are...
+
+Left Module:
+- First row: 0, 1, 2, 3, 4, 5, 6
+- Second row: 14, 15, 16, 17, 18, 19, 20
+- Third row: 28, 29, 30, 31, 32, 33, 34
+- Fourth row: 46, 47, 48, 49, 50, 51
+- Fifth row: 60, 61, 62, 63, 64
+
+Right Module:
+- First row: 7, 8, 9, 10, 11, 12, 13
+- Second row: 21, 22, 23, 24, 25, 26, 27
+- Third row: 39, 40, 41, 42, 43, 44, 45
+- Fourth row: 54, 55, 56, 57, 58, 59
+- Fifth row: 71, 72, 73, 74, 75
+
+Left Thumb Cluster:
+- First row: 35, 36, 
+- Second row: 52
+- Third row: 65, 66, 67
+
+Right Thumb Cluster:
+- First row: 37, 38
+- Second row: 53
+- Third row: 68, 69, 70
+
 ## Building the Firmware with GitHub Actions
 
 ### Setup
