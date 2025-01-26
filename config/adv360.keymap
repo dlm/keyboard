@@ -19,21 +19,38 @@
 #include <dt-bindings/zmk/backlight.h>
 
 / {
-  behaviors {
-    #include "macros.dtsi"
-    #include "version.dtsi"
+    behaviors {
+        #include "macros.dtsi"
+        #include "version.dtsi"
 
-    hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_BACKSPACE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        bspc: backspace {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Complext Backspace";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&bspc_del>;
+        };
     };
-
-  };
 
     keymap {
         compatible = "zmk,keymap";
@@ -43,9 +60,9 @@
             bindings = <
  &kp EQUAL      &kp N1     &kp N2    &kp N3    &kp N4  &kp N5  &tog 1                                                           &mo 3  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
  &mt LALT TAB   &kp Q      &kp W     &kp E     &kp R   &kp T   &none                                                            &none  &kp Y   &kp U   &kp I      &kp O     &kp P     &mt RALT BSLH
- &mt LCTRL ESC  &lt 2 A    &kp S     &kp D     &kp F   &kp G   &none           &none    &none     &none  &none                  &none  &kp H   &kp J   &kp K      &kp L     &kp SEMI  &hm RCTRL SQT
- &mt LSHFT LBKT &kp Z      &kp X     &kp C     &kp V   &kp B                            &none     &none                                &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &mt RSHFT RBKT
- &none          &kp GRAVE  &none     &none     &none              &hm LGUI BSPC &kp DEL &none     &none  &kp ENTER  &hm RGUI SPACE             &none   &none      &none     &none     &mo 2
+ &mt LCTRL ESC  &lt 2 A    &kp S     &kp D     &kp F   &kp G   &none             &none    &none     &none  &none                  &none  &kp H   &kp J   &kp K      &kp L     &kp SEMI  &hm RCTRL SQT
+ &mt LSHFT LBKT &kp Z      &kp X     &kp C     &kp V   &kp B                              &none     &none                                &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &mt RSHFT RBKT
+ &none          &kp GRAVE  &none     &none     &none               &bspc LGUI 0  &kp DEL  &none     &none  &kp ENTER  &hm RGUI SPACE             &none   &none      &none     &none     &mo 2
             >;
         };
 
