@@ -77,37 +77,40 @@
     keymap {
         compatible = "zmk,keymap";
 
-
+        // layer 0: default
         default_layer {
             bindings = <
- &kp EQUAL        &kp N1   &kp N2  &kp N3  &kp N4  &kp N5  &tog 1                                                             &mo 3  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0      &kp MINUS
- &hm LALT TAB     &kp Q    &kp W   &kp E   &kp R   &kp T   &none                                                              &none  &kp Y   &kp U   &kp I      &kp O    &kp P       &mt RALT BSLH
- &mt LCTRL GRAVE  &lt 2 A  &kp S   &kp D   &kp F   &kp G   &none             &none    &none     &none  &none                  &none  &kp H   &kp J   &kp K      &kp L    &lt 1 SEMI  &hm RCTRL SQT
+ &kp EQUAL        &kp N1   &kp N2  &kp N3  &kp N4  &kp N5   &tog 1                                                            &mo 3  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0      &kp MINUS
+ &hm LALT TAB     &kp Q    &kp W   &kp E   &kp R   &lt 3 T  &none                                                             &none  &kp Y   &kp U   &kp I      &kp O    &kp P       &mt RALT BSLH
+ &mt LCTRL GRAVE  &lt 2 A  &kp S   &kp D   &kp F   &kp G    &none            &none    &none     &none  &none                  &none  &kp H   &kp J   &kp K      &kp L    &lt 1 SEMI  &hm RCTRL SQT
  &mt LSHFT LBKT   &kp Z    &kp X   &kp C   &kp V   &kp B                              &none     &none                                &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH    &mt RSHFT RBKT
  &none            &none    &none   &none   &none               &bspc LGUI 0  &kp ESC  &none     &none  &kp ENTER  &hm RGUI SPACE             &none   &none      &none    &none       &none
             >;
         };
 
+        // layer 1: keypad
         layer_keypad {
             bindings = <
- &none        &none      &none   &none   &none   &none      &trans                                           &mo 3  &none  &none  &none  &none      &none  &none
- &kp E        &kp SLASH  &kp N9  &kp N8  &kp N7  &kp STAR   &none                                            &none  &none  &none  &none  &none      &none  &none
- &kp X        &kp MINUS  &kp N3  &kp N2  &kp N1  &kp PLUS   &none       &none   &none     &none  &none       &none  &none  &none  &none  &kp RSHFT  &none  &none
- &kp PERCENT  &kp DOT    &kp N6  &kp N5  &kp N4  &kp EQUAL                      &none     &none                     &none  &none  &none  &none      &none  &none
- &none        &none      &none   &none   &none                  &trans  &kp N0  &none     &none  &trans  &trans            &none  &none  &none      &none  &none
+ &none        &none      &none   &none   &none   &none      &trans                                           &none  &none  &none      &none  &none      &none  &none
+ &kp E        &kp SLASH  &kp N9  &kp N8  &kp N7  &kp STAR   &none                                            &none  &none  &none      &none  &none      &none  &none
+ &kp X        &kp MINUS  &kp N3  &kp N2  &kp N1  &kp PLUS   &none       &none   &none     &none  &none       &none  &none  &kp RCTRL  &none  &kp RSHFT  &none  &none
+ &kp PERCENT  &kp DOT    &kp N6  &kp N5  &kp N4  &kp EQUAL                      &none     &none                     &none  &none      &none  &none      &none  &none
+ &none        &none      &none   &none   &none                  &trans  &kp N0  &none     &none  &trans  &trans            &none      &none  &none      &none  &none
             >;
         };
 
+        // layer 2: function
         layer_fn {
             bindings = <
- &kp F1  &kp F2  &kp F3     &kp F4     &kp F5   &kp F6  &tog 1                                            &mo 3  &kp F7          &kp F8          &kp F9          &kp F10          &kp F11  &kp F12
+ &kp F1  &kp F2  &kp F3     &kp F4     &kp F5   &kp F6  &tog 1                                            &none  &kp F7          &kp F8          &kp F9          &kp F10          &kp F11  &kp F12
  &trans  &trans  &trans     &trans     &trans   &trans  &none                                             &none  &kp HOME        &kp PAGE_UP     &kp END         &kp PAGE_DOWN    &trans   &trans
  &trans  &trans  &kp LCTRL  &kp LSHFT  &kp LALT &trans  &none       &trans  &trans    &trans  &trans      &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &trans   &trans
  &trans  &trans  &trans     &trans     &trans   &trans                      &trans    &trans                     &trans          &trans          &trans          &trans           &trans   &trans
- &trans  &trans  &trans     &trans     &trans              &trans  &trans  &trans    &trans  &trans  &trans                     &trans          &trans          &trans           &trans   &trans
+ &trans  &trans  &trans     &trans     &trans              &trans  &trans  &trans    &trans  &trans  &trans                      &trans          &trans          &trans           &trans   &trans
             >;
         };
 
+        // layer 3: mod
         layer_mod {
             bindings = <
  &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                              &trans                  &none  &none       &none       &none   &none   &none
